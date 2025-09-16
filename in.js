@@ -994,7 +994,7 @@ h.addVelocity(-Math.sin(this.yaw) * g * .5, .1, -Math.cos(this.yaw) * g * .5);
 			function getArmorSlot(armorSlot, slots) {
 				let returned = armorSlot;
 				let dist = 0;
-				for(let i = 0; i < 40; i++) {
+				for(let i = 0; i < ; i++) {
 					const stack = slots[i].getHasStack() ? slots[i].getStack() : null;
 					if (stack && stack.getItem() instanceof ItemArmor && (3 - stack.getItem().armorType) == armorSlot) {
 						const strength = getItemStrength(stack);
@@ -1457,7 +1457,7 @@ const AutoFunnyChat = new Module("AutoFunnyChat", function(callback) {
     // Periodic random funny message
     let lastSent = 0;
     tickLoop["AutoFunnyChat"] = function() {
-        if (Date.now() - lastSent > 4000) { // Sends every 40 seconds
+        if (Date.now() - lastSent > 400) { // Sends every 40 seconds
             const msg = funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
             ClientSocket.sendPacket(new SPacketMessage({text: msg}));
             lastSent = Date.now();

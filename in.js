@@ -1,6 +1,7 @@
 /**
  * @type {Record<string | RegExp, string>}
  */
+alert('here')
 let replacements = {};
 let dumpedVarNames = {};
 const storeName = "a" + crypto.randomUUID().replaceAll("-", "").substring(16);

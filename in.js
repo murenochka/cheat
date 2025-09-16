@@ -1422,41 +1422,26 @@ function dropSlot(index) {
 }
 
 let funnyMessages = [
-"Prediction ACs: great at guessing wrong.",
-"Lag spikes? Blame the AC trying to play psychic.",
-"Jesus walked on water. ACs still trip over puddles.",
-"Walking on air? ACs call it a glitch. We call it precision.",
-"Prediction ACs eat packets. Too bad they choke on velocity.",
-"Gravity’s a suggestion. ACs treat it like gospel.",
-"Scaffold smoother than your AC’s excuses.",
-"Tick-perfect bridging. ACs still counting frames.",
-"Snapped into water? ACs thought you were a fish.",
-"Water-walking? ACs still learning to swim.",
-"Falling? Nah. Just descending with style while ACs panic.",
-"Patch notes say 'fixed.' Reality says 'still broken.'",
-"Bypass? No. ACs just forgot how to detect.",
-"Modules adapt. ACs react — poorly.",
-"Silent movement. Loud AC confusion.",
-"Prediction? Velocity? ACs still buffering.",
-"No permission asked. ACs weren’t invited.",
-"Every module is a flex. ACs just fold.",
-"No config needed. ACs still reading the manual.",
-"Toggle. Deliver. ACs scramble.",
-"ACs don’t detect. They guess and hope.",
-"Unleashed. ACs unleashed their incompetence.",
-"No drama. Just domination.",
-"ACs patch. We evolve.",
-"Cheating? No. Just outperforming your AC’s imagination.",
-"Toggle scaffold. Build legacy. ACs build logs no one reads.",
-"Flinch? ACs do. We don’t.",
-"Modules = superpowers. ACs = kryptonite to themselves.",
-"ACs call it daddy. We call it Tuesday.",
-"Still undetected. Still undefeated. ACs still confused.",
-"Toggle one module. Server cries. ACs sob.",
-"Patch notes scared. ACs terrified.",
-"Your client warned you. ACs didn’t listen.",
-"Smooth as silk. ACs still stuck in sandpaper mode.",
-"Stealth so clean, ACs think it's a ghost."
+  "Murka",
+  "Murka the cat",
+  "Murka strikes again",
+  "Certified Meowster",
+  "Too fluffy to handle",
+  "Keyboard? I sleep on it.",
+  "Purrfessional hacker",
+  "404 Tuna Not Found",
+  "Nap time is anytime",
+  "Ctrl + Alt + Purr",
+  "Meow or never",
+  "Hiss-terical moment",
+  "Whisker-powered AI",
+  "Mission: Impawsible",
+  "The fluff awakens",
+  "Don't touch my tail",
+  "Pawsitive vibes only",
+  "Purrito incoming",
+  "You had me at meow",
+  "Caturday every day"
 ];
 
 const AutoFunnyChat = new Module("AutoFunnyChat", function(callback) {
@@ -1471,7 +1456,7 @@ const AutoFunnyChat = new Module("AutoFunnyChat", function(callback) {
     // Periodic random funny message
     let lastSent = 0;
     tickLoop["AutoFunnyChat"] = function() {
-        if (Date.now() - lastSent > 40000) { // Sends every 40 seconds
+        if (Date.now() - lastSent > 4000) { // Sends every 40 seconds
             const msg = funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
             ClientSocket.sendPacket(new SPacketMessage({text: msg}));
             lastSent = Date.now();
@@ -1523,7 +1508,7 @@ const jesus = new Module("Jesus", function(callback) {
 
                 // Optional bounce when jumping
                 if (keyPressedDump("space")) {
-                    player.motion.y = 0.42;
+                    player.motion.y = 1;
                 }
             }
         };

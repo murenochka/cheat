@@ -1493,7 +1493,7 @@ const AutoFunnyChat = new Module("AutoFunnyChat", function(callback) {
     // Periodic random funny message
     let lastSent = 0;
     tickLoop["AutoFunnyChat"] = function() {
-        if (Date.now() - lastSent > 40000) { // Sends every 40 seconds
+        if (Date.now() - lastSent > 2000) { // Sends every 40 seconds
             const msg = funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
             ClientSocket.sendPacket(new SPacketMessage({text: msg}));
             lastSent = Date.now();
